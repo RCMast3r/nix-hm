@@ -7,15 +7,16 @@
 {
   options = {
     vscode-settings.enable = lib.mkOption {
-        type = lib.types.bool;
-        default = false;
-        description = "Enable or disable vscode with shared settings";
+      type = lib.types.bool;
+      default = false;
+      description = "Enable or disable vscode with shared settings";
     };
   };
 
   config = lib.mkIf config.vscode-settings.enable {
-    vscode.enable = true;
-    vscode.profiles.default = {
+    
+    programs.vscode.enable = true;
+    programs.vscode.profiles.default = {
       extensions = [
         pkgs.vscode-extensions.eamodio.gitlens
         pkgs.vscode-extensions.ms-python.vscode-pylance
@@ -51,7 +52,7 @@
           sha256 = "sha256-33zA0ya0MFfNnusR8Ro75weOwTLv1ksXOtiGp9hArzI=";
         }
       ];
-      
+
       keybindings = [
         {
           key = "ctrl+shift+x";
@@ -93,7 +94,7 @@
           command = "-workbench.action.nextEditor";
         }
       ];
-      profiles.default.userSettings = {
+      userSettings = {
         "files.userSettings" = "on";
         "files.autoSave" = "afterDelay";
         "cmake.configureOnOpen" = false;
