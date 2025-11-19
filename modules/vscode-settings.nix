@@ -32,6 +32,7 @@
         pkgs.vscode-extensions.vscodevim.vim
         pkgs.vscode-extensions.rust-lang.rust-analyzer
         pkgs.vscode-extensions.marp-team.marp-vscode
+        pkgs.vscode-extensions.dhall.dhall-lang
       ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
         {
           name = "cpp-helper";
