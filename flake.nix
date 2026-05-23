@@ -19,6 +19,7 @@
       flake = {
         homeModules = {
           vscode-settings = ./modules/vscode-settings.nix;
+          default-system-utils = ./modules/default-system-utils.nix;
         };
       };
     };
