@@ -19,9 +19,6 @@
     programs.vscode.profiles.default = {
       extensions = [
         pkgs.vscode-extensions.eamodio.gitlens
-        pkgs.vscode-extensions.ms-python.vscode-pylance
-        pkgs.vscode-extensions.ms-python.black-formatter
-        pkgs.vscode-extensions.ms-python.python
         pkgs.vscode-extensions.ms-vscode-remote.remote-ssh
         pkgs.vscode-extensions.twxs.cmake
         pkgs.vscode-extensions.ms-vscode.cmake-tools
@@ -102,6 +99,7 @@
         "window.zoomLevel" = 1;
         "[python]" = { "editor.defaultFormatter" = "ms-python.black-formatter"; };
         "terminal.external.linuxExec" = "/bin/bash";
+        "workbench.secondarySideBar.defaultVisibility"= "hidden";
       };
     };
   };
