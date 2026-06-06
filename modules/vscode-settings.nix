@@ -30,25 +30,6 @@
         pkgs.vscode-extensions.rust-lang.rust-analyzer
         pkgs.vscode-extensions.marp-team.marp-vscode
         pkgs.vscode-extensions.dhall.dhall-lang
-      ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
-        {
-          name = "cpp-helper";
-          publisher = "amiralizadeh9480";
-          version = "0.3.4";
-          sha256 = "sha256-TXvKciewjm/Mw6t60Z56C5yjujfONO/gLuijctkvCzg=";
-        }
-        {
-          name = "cmake-language-support-vscode";
-          publisher = "josetr";
-          version = "0.0.9";
-          sha256 = "sha256-LNtXYZ65Lka1lpxeKozK6LB0yaxAjHsfVsCJ8ILX8io=";
-        }
-        {
-          name = "doc-doxygen";
-          publisher = "dusartvict";
-          version = "0.3.16";
-          sha256 = "sha256-33zA0ya0MFfNnusR8Ro75weOwTLv1ksXOtiGp9hArzI=";
-        }
       ];
 
       keybindings = [
@@ -101,6 +82,7 @@
         "[python]" = { "editor.defaultFormatter" = "ms-python.black-formatter"; };
         "terminal.external.linuxExec" = "/bin/bash";
         "workbench.secondarySideBar.defaultVisibility"= "hidden";
+        "workbench.colorTheme" = "Dark+";
       };
     };
   };
