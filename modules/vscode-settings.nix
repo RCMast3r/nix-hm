@@ -30,6 +30,7 @@
         pkgs.vscode-extensions.rust-lang.rust-analyzer
         pkgs.vscode-extensions.marp-team.marp-vscode
         pkgs.vscode-extensions.dhall.dhall-lang
+        pkgs.vscode-extensions.drblury.protobuf-vsc
       ];
 
       keybindings = [
