@@ -74,6 +74,7 @@ let
       "terminal.external.linuxExec" = "/bin/bash";
       "workbench.secondarySideBar.defaultVisibility" = "hidden";
       "terminal.integrated.scrollback" = 50000;
+      "git.blame.editorDecoration.enabled" = true;
     };
   };
 
