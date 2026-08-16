@@ -84,6 +84,7 @@
         "terminal.external.linuxExec" = "/bin/bash";
         "workbench.secondarySideBar.defaultVisibility"= "hidden";
         "workbench.colorTheme" = "Dark+";
+        "terminal.integrated.scrollback"= 50000;
       };
     };
   };
