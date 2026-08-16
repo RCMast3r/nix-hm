@@ -8,7 +8,6 @@ let
   # everything the profiles have in common - only the color theme differs
   sharedProfile = {
     extensions = [
-      pkgs.vscode-extensions.eamodio.gitlens
       pkgs.vscode-extensions.ms-vscode-remote.remote-ssh
       pkgs.vscode-extensions.twxs.cmake
       pkgs.vscode-extensions.ms-vscode.cmake-tools
@@ -83,6 +82,14 @@ let
       "workbench.colorTheme" = colorTheme;
     };
   };
+
+  profiles = {
+    default = mkProfile "Dark+";
+    light = mkProfile "Light+";
+  };
+
+  # only profiles other than `default` need registering in storage.json
+  needRegistering = lib.attrNames (removeAttrs profiles [ "default" ]);
 in
 {
   options = {
@@ -100,7 +107,13 @@ in
     # identical profiles apart from the theme. note that having a non-default
     # profile flips programs.vscode.mutableExtensionsDir to false, so
     # extensions can no longer be installed from within vscode itself.
-    programs.vscode.profiles.default = mkProfile "Dark+";
-    programs.vscode.profiles.light = mkProfile "Light+";
+    programs.vscode.profiles = profiles;
+
+    # NOTE: vscode only learns about these profiles by reading .userDataProfiles
+    # out of globalStorage/storage.json, and it deletes any User/profiles/<name>
+    # directory that file does not mention. home-manager writes that key during
+    # activation, which loses the race against a running vscode - so the
+    # registration is done at launch time by the `code` wrapper instead (see
+    # programs.vscode.package in my-home-manager-config/flake.nix).
   };
 }
